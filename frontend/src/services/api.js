@@ -1,5 +1,5 @@
 // simple wrapper for backend endpoints
-const BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api/mgnrega";
+const BASE = import.meta.env.VITE_API_BASE;
 
 export async function fetchJSON(pathOrUrl) {
   // Only use BASE if not a full URL
