@@ -21,4 +21,8 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 80 
+        value: 80
+    buildCommand: |
+      docker build \
+        --build-arg VITE_API_BASE=$VITE_API_BASE \
+        -t frontend . 
