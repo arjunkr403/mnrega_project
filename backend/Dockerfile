@@ -1,20 +1,14 @@
-# Step 1: Use Node.js official image
-FROM node:18
+# backend/Dockerfile
+FROM node:18-alpine
 
-# Step 2: Set working directory
 WORKDIR /app
 
-# Step 3: Copy package files
 COPY package*.json ./
+RUN npm ci --only=production
 
-# Step 4: Install dependencies
-RUN npm install
-
-# Step 5: Copy project files
 COPY . .
 
-# Step 6: Expose backend port
+ENV PORT=5000
 EXPOSE 5000
 
-# Step 7: Run the app
-CMD ["npm", "run", "dev"]
+CMD ["node", "server.js"]
