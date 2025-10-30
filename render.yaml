@@ -20,5 +20,3 @@ services:
       - fromGroup: mgnrega-env
       - key: NODE_ENV
         value: production
-    dependsOn:
-      - mgnrega-backend
