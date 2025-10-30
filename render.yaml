@@ -20,3 +20,5 @@ services:
       - fromGroup: mgnrega-env
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 80 
