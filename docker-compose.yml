@@ -17,14 +17,14 @@ services:
       - ./backend/.env
     depends_on:
       - mgnrega-mongo
+    restart: always
 
   mgnrega-frontend:
     build: ./frontend
     container_name: mgnrega-frontend
     ports:
       - "3000:80"
-    stdin_open: true
-    tty: true
+    restart: always
     depends_on:
       - mgnrega-backend
 

@@ -15,11 +15,9 @@ export default function DistrictSelector({ onSelect, initial = "Patna", state = 
         const list = await getDistricts(state);
         if (!mounted) return;
         setDistricts(list);
+        console.log("Districts loaded:", list);
       } catch (e) {
-        setDistricts([
-          "Patna", "Gaya", "Muzaffarpur", "Darbhanga", "Bhagalpur", "Purnia",
-          "Saran", "Siwan", "Chapra", "Begusarai", "Nalanda", "Buxar", "Bhojpur",
-          "Samastipur", "Araria", "Madhubani"
+        setDistricts([""
         ]);
       } finally {
         setLoading(false);
