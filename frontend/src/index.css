@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --base-font: 16px;
+}
+
+html {
+  font-size: var(--base-font);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(120deg, #f8fafc, #eef2ff);
+  color: #1e293b;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+@layer components {
+  /* 🌈 Navbar */
+  .navbar {
+    @apply flex justify-between items-center px-6 py-3 rounded-b-2xl shadow-md text-white font-semibold;
+    background: linear-gradient(90deg, #6366f1, #3b82f6, #06b6d4);
+  }
+
+  /* 🎨 Colorful cards */
+  .card {
+    @apply rounded-xl shadow-md border border-transparent p-5 transition transform hover:scale-[1.02];
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  }
+
+  .card-1 {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    @apply text-white;
+  }
+
+  .card-2 {
+    background: linear-gradient(135deg, #34d399, #10b981);
+    @apply text-white;
+  }
+
+  .card-3 {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    @apply text-white;
+  }
+
+  .card-4 {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    @apply text-white;
+  }
+
+  /* 📊 Section titles */
+  .section-title {
+    @apply font-semibold text-slate-700 mb-4 text-sm uppercase tracking-wide;
+  }
+
+  /* 🧩 Metric grid layout */
+  .metric-grid {
+    @apply grid grid-cols-2 sm:grid-cols-4 gap-4;
+  }
+
+  /* 🔢 Highlighted metrics */
+  .metric-value {
+    @apply text-2xl sm:text-3xl font-extrabold leading-tight;
+  }
+
+  .metric-label {
+    @apply text-sm font-medium opacity-90;
+  }
+
+  /* 🧭 Buttons */
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-md text-sm font-semibold shadow hover:from-indigo-500 hover:to-cyan-400 active:scale-[0.98];
+  }
+
+  /* 🌟 Hover depth */
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 🏙️ District Selector */
+  .district-selector {
+    @apply bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-2xl p-5 shadow-lg border border-slate-200 transition-all duration-200;
+  }
+
+  .district-label {
+    @apply block text-base font-semibold text-slate-700 mb-3 tracking-wide;
+  }
+
+  .district-input {
+    @apply w-full mb-4 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-150;
+  }
+
+  .district-loading {
+    @apply text-sm text-slate-500 italic;
+  }
+
+  .district-list {
+    @apply grid grid-cols-2 gap-2 max-h-64 overflow-auto;
+  }
+
+  .district-btn {
+    @apply text-left p-2 rounded-lg border border-transparent bg-white shadow-sm text-slate-700 font-medium 
+           hover:bg-gradient-to-r hover:from-cyan-100 hover:to-indigo-100 hover:scale-[1.03] transition-all;
+  }
+
+  .district-btn:active {
+    @apply bg-cyan-200 scale-[0.97];
+  }
+
+  /* Highlight selected district */
+  .district-btn-selected {
+    @apply bg-gradient-to-r from-indigo-500 to-cyan-400 text-white font-semibold shadow-md;
+  }
+
+  /* 🌐 Language Toggle */
+  .language-toggle {
+    @apply flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 p-1 rounded-full shadow-md;
+  }
+
+  .lang-btn {
+    @apply px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer;
+  }
+
+  .lang-btn-active {
+    @apply bg-white text-slate-800 shadow-md scale-105;
+  }
+
+  .lang-btn-inactive {
+    @apply text-white opacity-80 hover:opacity-100;
+  }
+}
